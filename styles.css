@@ -160,3 +160,69 @@ footer {
     gap: 10px;
   }
 }
+
+
+/* --- Homepage split hero layout --- */
+.logo a {
+  color: #e6e6e6;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #4db8ff;
+}
+
+.hero.hero-split {
+  text-align: left;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text p {
+  max-width: 520px;
+  margin: 0 0 30px 0;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Trust bar */
+.trust-bar {
+  background: #111318;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 0.92rem;
+  color: #aaa;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .hero.hero-split {
+    text-align: center;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-secondary {
+    margin-left: 0;
+    margin-top: 10px;
+    display: inline-block;
+  }
+}
