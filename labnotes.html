@@ -29,9 +29,67 @@
   <h1>Lab Notes</h1>
   <p>Development updates, engineering notes, and design insights.</p>
 
-  <div class="blog-placeholder">
-    <p>No posts yet. Check back soon.</p>
-  </div>
+  <article class="blog-post">
+    <h2>Lab Note #001 — The Board I Built After Frying Too Many Dev Kits</h2>
+    <p><em>Published: February 2026</em></p>
+
+    <p>If you prototype long enough, you’ll eventually do it.</p>
+
+    <p>
+    Reverse polarity.<br>
+    Hot-plug a supply.<br>
+    Grab the wrong wall adapter.<br>
+    Move a jumper one pin over.
+    </p>
+
+    <p>And something quietly dies.</p>
+
+    <p>I’ve done it enough times to stop pretending it wouldn’t happen again.</p>
+
+    <p>
+    So I built a small inline protection board that lives between my power source and whatever I’m testing.
+    </p>
+
+    <p>Nothing fancy. Just:</p>
+
+    <ul>
+      <li>MOSFET-based reverse polarity protection</li>
+      <li>A TVS diode for transient suppression</li>
+      <li>A resettable polyfuse (500mA or ~1.1A versions)</li>
+      <li>3V–24V DC pass-through</li>
+    </ul>
+
+    <p>
+    It does <strong>not</strong> regulate voltage.<br>
+    It won’t save you from intentionally feeding 24V into a 5V board.
+    </p>
+
+    <p>
+    But it will absorb the kinds of mistakes that tend to happen when you're moving fast, tired, or swapping supplies mid-debug.
+    </p>
+
+    <p>
+    It’s basically a small layer of insurance between you and an avoidable failure.
+    </p>
+
+    <p>
+    No firmware.<br>
+    No measurements.<br>
+    No blinking LEDs.
+    </p>
+
+    <p>
+    Just something that sits there quietly and takes the hit instead of your board.
+    </p>
+
+    <p>
+    If that sounds useful, you can find it on our <a href="products.html">Products page</a>.
+    </p>
+
+    <p>More small lab tools coming soon.</p>
+
+    <p>— Odderon Lab</p>
+  </article>
 
 </section>
 
