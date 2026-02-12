@@ -226,3 +226,53 @@ footer {
     display: inline-block;
   }
 }
+
+/* --- Lab Notes Styling --- */
+
+.blog-post {
+  max-width: 750px;
+  margin: 60px auto;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #222;
+}
+
+.blog-post:last-child {
+  border-bottom: none;
+}
+
+.blog-post h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.blog-post em {
+  font-size: 0.85rem;
+  color: #888;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.blog-post p {
+  margin-bottom: 18px;
+  color: #dcdcdc;
+}
+
+.blog-post ul {
+  margin: 20px 0 30px 20px;
+}
+
+.blog-post li {
+  margin-bottom: 8px;
+}
+
+.blog-post a {
+  color: #4db8ff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(77, 184, 255, 0.4);
+  padding-bottom: 2px;
+}
+
+.blog-post a:hover {
+  color: #ffffff;
+  border-bottom: 1px solid #4db8ff;
+}
