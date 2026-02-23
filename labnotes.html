@@ -30,6 +30,77 @@
   <h1>Lab Notes</h1>
   <p>Development updates, engineering notes, and design insights.</p>
 
+<article class="blog-post">
+  <h2>Lab Note #002 — Is USB 5V Good Enough?</h2>
+  <p><em>Published: February 2026</em></p>
+
+  <p>
+  I’m working on something that started as a small circuit and is slowly turning into something more serious.
+  </p>
+
+  <p>
+  It runs from USB.
+  </p>
+
+  <p>
+  At first, I did what I always do — route VBUS to the 5V rail and move on.
+  </p>
+
+  <p>
+  That’s how most dev boards work.<br>
+  It’s simple.<br>
+  It usually behaves.
+  </p>
+
+  <p>
+  But this build isn’t meant to be “usually fine.”
+  </p>
+
+  <p>
+  The more I looked at it, the more I realized USB 5V is really just “close enough.”
+  </p>
+
+  <p>
+  Different ports sit at slightly different voltages.<br>
+  Cables drop a little under load.<br>
+  Switching relays or driving outputs can nudge the rail just enough to matter.
+  </p>
+
+  <p>
+  For quick prototypes, that’s acceptable.
+  </p>
+
+  <p>
+  For something that’s supposed to behave like a bench tool — predictable, repeatable — it feels like cutting a corner.
+  </p>
+
+  <p>
+  So instead of trusting VBUS directly, I added a current-limited input stage and a buck-boost converter to generate a steady internal rail just under 5V.
+  </p>
+
+  <p>
+  It might be overkill.
+  </p>
+
+  <p>
+  But I’d rather eliminate variables now than debug strange behavior later and wonder if it was the cable.
+  </p>
+
+  <p>
+  Small decisions like this are starting to define whether this stays a prototype — or becomes something more refined.
+  </p>
+
+  <p>
+  If you’ve built something similar and have strong opinions about USB power architecture, I’d genuinely like to hear them.
+  </p>
+
+  <p>
+  Reach out at <a href="mailto:odderonlab@protonmail.com">odderonlab@protonmail.com</a>.
+  </p>
+
+  <p>— Odderon Lab</p>
+</article>
+
   <article class="blog-post">
     <h2>Lab Note #001 — The Board I Built After Frying Too Many Dev Kits</h2>
     <p><em>Published: February 2026</em></p>
