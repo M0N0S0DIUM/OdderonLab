@@ -31,6 +31,84 @@
   <p>Development updates, engineering notes, and design insights.</p>
 
 <article class="blog-post">
+  <h2>Lab Note #003 – Simulating Sensors Instead of Chasing Them</h2>
+  <p><em>Published: May 2026</em></p>
+
+  <p>
+A lot of debugging time gets wasted waiting on a sensor that isn’t cooperating.
+  </p>
+
+  <p>
+Sometimes the hardware isn’t mounted yet. Sometimes the engine isn’t running. Sometimes the sensor is buried
+inside a machine you don’t want to tear apart again just to test one input.
+  </p>
+
+  <p>
+Lately I’ve been experimenting with a small board designed to do the opposite:
+instead of <em>reading</em> sensors, it emulates them.
+  </p>
+
+  <p>
+The goal is simple — generate predictable outputs that look like real-world sensors so embedded systems can be
+tested without the actual hardware attached.
+  </p>
+
+  <p>
+Right now the prototype can produce adjustable analog outputs ranging from 3.3 V up to around 12 V,
+which opens the door to simulating a surprising number of automotive and industrial signals.
+  </p>
+
+  <p>
+What started as a quick internal tool is slowly turning into a broader question:
+what kinds of sensors would actually be useful to emulate?
+  </p>
+
+  <p>
+Automotive systems alone cover a huge range:
+  </p>
+
+  <ul>
+    <li>Pressure sensors</li>
+    <li>Throttle position sensors</li>
+    <li>Temperature senders</li>
+    <li>Fuel level sensors</li>
+    <li>MAP / MAF style outputs</li>
+    <li>Variable resistance sensors</li>
+    <li>0–5 V analog industrial sensors</li>
+  </ul>
+
+  <p>
+There’s also the question of how “real” it should behave.
+  </p>
+
+  <p>
+Should it just output fixed voltages?  
+Should it generate changing waveforms and noisy signals?  
+Should it emulate sensor faults intentionally for diagnostics testing?
+  </p>
+
+  <p>
+Part of me wants to keep it simple and reliable. Another part keeps sketching features that would turn it into
+a general-purpose automotive development tool.
+  </p>
+
+  <p>
+I suspect there are plenty of niche debugging tools that don’t exist simply because nobody bothered building them.
+  </p>
+
+  <p>
+If you work on ECUs, industrial controls or embedded systems and have thoughts on what sensors are most annoying
+to test without real hardware attached, I’d genuinely like to hear about it.
+  </p>
+
+  <p>
+This one may end up becoming something larger than originally planned.
+  </p>
+
+  <p>— Odderon Lab</p>
+</article>
+
+<article class="blog-post">
   <h2>Lab Note #002 — Is USB 5V Good Enough?</h2>
   <p><em>Published: February 2026</em></p>
 
