@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Odderon Lab - Precision Diagnostic Tools",
   "scripts": {
-    "build": "eleventy",
+    "build": "eleventy && cp styles.css _site/styles.css",
     "dev": "eleventy --serve",
     "admin": "npx decap-cms-proxy-server"
   },

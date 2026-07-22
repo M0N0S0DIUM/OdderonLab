@@ -58,11 +58,30 @@ module.exports = function(eleventyConfig) {
 
   // Passthrough copies
   eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("styles.css");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy({ "_redirects": "/" });
+
+  // Manually copy styles.css using afterBuild event
+  eleventyConfig.on("eleventy.after", () => {
+    console.log("[ELEVENTY CONFIG] eleventy.after event fired");
+    const fs = require("fs");
+    const path = require("path");
+    const inputPath = path.join(process.cwd(), "styles.css");
+    const outputDir = path.join(process.cwd(), "_site");
+    const outputPath = path.join(outputDir, "styles.css");
+    console.log("[DEBUG] Checking for styles.css at:", inputPath);
+    console.log("[DEBUG] Output to:", outputPath);
+    console.log("[DEBUG] Exists:", fs.existsSync(inputPath));
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+    if (fs.existsSync(inputPath)) {
+      fs.copyFileSync(inputPath, outputPath);
+      console.log("[DEBUG] Copied styles.css to _site/");
+    }
+  });
 
   // Watch targets
   eleventyConfig.addWatchTarget("styles.css");
