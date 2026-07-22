@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: Lab Notes | Odderon Lab
+description: Engineering lab notes from Odderon Lab. Prototyping insights, hardware design decisions, and embedded system protection techniques.
+---
+
+<section class="container page-content">
+  <h1>Lab Notes</h1>
+  <p>Development updates, engineering notes, and design insights.</p>
+
+  {% for post in collections.posts %}
+    {% if not post.data.draft %}
+  <article class="blog-post">
+    <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <time datetime="{{ post.date }}">{{ post.date }}</time>
+    <p>{{ post.data.description }}</p>
+    <a href="{{ post.url }}" class="btn-primary">Read more</a>
+  </article>
+    {% endif %}
+  {% endfor %}
+</section>

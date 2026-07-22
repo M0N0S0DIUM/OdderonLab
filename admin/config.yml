@@ -1,0 +1,64 @@
+# Decap CMS Configuration for Odderon Lab
+# Visit /admin/ on your site to access the CMS
+
+backend:
+  name: github
+  repo: odderon/odderonlab
+  branch: main
+  # Use Netlify Identity for auth (works on Vercel too)
+  # Or use github for direct GitHub OAuth
+  auth_type: github
+
+media_folder: "images"
+public_folder: "/images"
+
+site_url: https://odderonlab.com
+
+collections:
+  - name: "posts"
+    label: "Lab Notes"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "index"
+        label: "Homepage"
+        file: "index.njk"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+      - name: "products"
+        label: "Products"
+        file: "products.njk"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+      - name: "about"
+        label: "About"
+        file: "about.njk"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+      - name: "labnotes"
+        label: "Lab Notes Index"
+        file: "labnotes.njk"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+
+# For local development with decap-cms-proxy-server
+local_backend: true
