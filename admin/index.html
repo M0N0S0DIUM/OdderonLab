@@ -8,38 +8,67 @@
 </head>
 <body>
   <div id="decap-cms-root"></div>
+  <div id="status" style="padding:20px;color:#fff;font-family:monospace;"></div>
   <script>
-    console.log('Admin page loading...', { 
-      DecapCMS: typeof window.DecapCMS, 
-      decapCMS: typeof window.decapCMS,
-      DecapCMS: window.DecapCMS
-    });
-    
-    // Wait for DecapCMS to load
+    function setStatus(msg, isError = false) {
+      const el = document.getElementById('status');
+      el.textContent = msg;
+      el.style.color = isError ? '#ff6b6b' : '#00ff99';
+    }
+
+    function log(msg) {
+      console.log('[Admin]', msg);
+      setStatus(msg);
+    }
+
+    function logError(msg, err) {
+      console.error('[Admin Error]', msg, err);
+      setStatus(msg + (err ? ': ' + err.message : ''), true);
+    }
+
+    log('Admin page loading...');
+
+    // Wait for DecapCMS to load with timeout
+    let retries = 0;
+    const maxRetries = 50; // 5 seconds max
+
     function checkDecapCMS() {
       if (window.DecapCMS) {
-        console.log('DecapCMS found, initializing...');
-        window.DecapCMS.init({ config: { load_config_file: true } });
+        log('DecapCMS found, initializing...');
+        try {
+          window.DecapCMS.init({ config: { load_config_file: true } });
+          log('DecapCMS init called successfully');
+        } catch (e) {
+          logError('DecapCMS init failed: ' + e.message, e);
+        }
       } else if (window.decapCMS) {
-        console.log('decapCMS found (lowercase), initializing...');
-        window.decapCMS.init({ config: { load_config_file: true } });
+        log('decapCMS found (lowercase), initializing...');
+        try {
+          window.decapCMS.init({ config: { load_config_file: true } });
+          log('decapCMS init called successfully');
+        } catch (e) {
+          logError('decapCMS init failed: ' + e.message, e);
+        }
       } else {
-        console.log('DecapCMS not yet loaded, retrying in 100ms...');
-        setTimeout(checkDecapCMS, 100);
+        retries++;
+        if (retries < 50) {
+          log('DecapCMS not loaded, retry ' + retries + '/50...');
+          setTimeout(checkDecapCMS, 100);
+        } else {
+          logError('DecapCMS failed to load after 5 seconds');
+        }
       }
     }
-    
+
     checkDecapCMS();
-    
+
     // Global error handlers
     window.addEventListener('error', (e) => {
-      console.error('Global error:', e.message, e.filename, e.lineno, e.colno, e.error);
-      document.body.innerHTML += `<pre style="color:red;padding:20px;background:#111;">JS Error: ${e.message}\n${e.filename}:${e.lineno}</pre>`;
+      logError('JS Error: ' + e.message + ' at ' + e.filename + ':' + e.lineno, e.error);
     });
-    
+
     window.addEventListener('unhandledrejection', (e) => {
-      console.error('Unhandled rejection:', e.reason);
-      document.body.innerHTML += `<pre style="color:red;padding:20px;background:#111;">Unhandled: ${e.reason}</pre>`;
+      logError('Unhandled rejection: ' + e.reason);
     });
   </script>
 </body>
