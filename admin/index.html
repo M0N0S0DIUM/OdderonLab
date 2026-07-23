@@ -27,18 +27,17 @@
 
     log('Admin page loading...');
 
-    // Check what globals are available after script loads
+    // Check what globals are available
     function checkGlobals() {
       const globals = {};
-      ['DecapCMS', 'decapCMS', 'CMS', 'NetlifyCMS'].forEach(name => {
+      ['DecapCMS', 'decapCMS', 'CMS', 'NetlifyCMS', 'decapCms'].forEach(name => {
         if (window[name]) globals[name] = typeof window[name];
       });
       return globals;
     }
 
-    // Wait for DecapCMS to load with timeout
     let retries = 0;
-    const maxRetries = 100; // 10 seconds max
+    const maxRetries = 100;
 
     function checkDecapCMS() {
       const globals = checkGlobals();
@@ -79,7 +78,7 @@
       }
     }
 
-    // Wait for script to load first
+    // Wait for script to load
     const script = document.querySelector('script[src*="decap-cms"]');
     if (script) {
       script.onload = function() {
@@ -90,7 +89,6 @@
         logError('Script failed to load');
       };
     } else {
-      // Fallback if script already loaded
       setTimeout(checkDecapCMS, 50);
     }
 
