@@ -8,6 +8,22 @@
 </head>
 <body>
   <div id="nc-root"></div>
+  <script>
+    window.decapCmsCallbacks = [];
+    window.decapCmsReady = function(callback) {
+      window.decapCmsCallbacks.push(callback);
+    };
+  </script>
   <script src="https://unpkg.com/decap-cms@3.3.1/dist/decap-cms.js" defer></script>
+  <script defer>
+    // Initialize with explicit config path
+    if (window.CMS) {
+      window.CMS.init();
+    } else {
+      window.decapCmsCallbacks.push(function() {
+        window.CMS.init();
+      });
+    }
+  </script>
 </body>
 </html>
