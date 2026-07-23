@@ -15,7 +15,7 @@
         { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" },
         { "key": "Content-Disposition", "value": "inline" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://decap-cms-proxy.noobreaper333.workers.dev; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; connect-src 'self' https://decap-cms-proxy.noobreaper333.workers.dev https://api.github.com https://github.com; frame-ancestors 'self';" }
+        { "key": "Content-Security-Policy", "value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://decap-cms-proxy.noobreaper333.workers.dev; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; connect-src 'self' https://unpkg.com https://decap-cms-proxy.noobreaper333.workers.dev https://api.github.com https://github.com; frame-ancestors 'self';" }
       ]
     }
   ]
