@@ -4,97 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Odderon Lab — Content Manager</title>
+  <style>html,body{margin:0;height:100%;background:#111;color:#eee;font-family:sans-serif}#nc-root{height:100%}</style>
 </head>
 <body>
   <div id="nc-root"></div>
-  <div id="status" style="padding:20px;color:#fff;font-family:monospace;"></div>
-  <script>
-    function setStatus(msg, isError = false) {
-      const el = document.getElementById('status');
-      el.textContent = msg;
-      el.style.color = isError ? '#ff6b6b' : '#00ff99';
-    }
-
-    function log(msg) {
-      console.log('[Admin]', msg);
-      setStatus(msg);
-    }
-
-    function logError(msg, err) {
-      console.error('[Admin Error]', msg, err);
-      setStatus(msg + (err ? ': ' + err.message : ''), true);
-    }
-
-    log('Admin page loading...');
-
-    // netlify-cms@2.x auto-initializes when it finds #nc-root
-    // It looks for window.CMS or window.NetlifyCMS
-    // We just need to wait for the script to load
-
-    function checkCMS() {
-      if (window.CMS) {
-        log('CMS found - CMS should auto-initialize with #nc-root');
-        return true;
-      }
-      if (window.NetlifyCMS) {
-        log('NetlifyCMS found');
-        return true;
-      }
-      if (window.CMS === undefined && window.NetlifyCMS === undefined) {
-        return false; // not loaded yet
-      }
-      logError('No CMS global found');
-      return true;
-    }
-
-    let retries = 0;
-    const maxRetries = 100;
-
-    function startChecking() {
-      if (window.CMS || window.NetlifyCMS) {
-        if (window.CMS) {
-          log('CMS found - should auto-initialize with #nc-root');
-        } else if (window.NetlifyCMS) {
-          log('NetlifyCMS found');
-        }
-        return true;
-      }
-      if (retries < 100) {
-        setTimeout(checkCMS, 50);
-      } else {
-        logError('CMS failed to load after 10 seconds');
-      }
-    }
-
-    // Wait for script to load
-    const script = document.querySelector('script[src*="netlify-cms"]');
-    if (script) {
-      if (script.readyState === 'complete' || script.readyState === 'loaded') {
-        log('Script already loaded, checking CMS...');
-        setTimeout(startChecking, 50);
-      } else {
-        script.onload = function() {
-          log('Script loaded, checking CMS...');
-          setTimeout(startChecking, 50);
-        };
-        script.onerror = function() {
-          logError('Script failed to load');
-        };
-      }
-    } else {
-      setTimeout(startChecking, 50);
-    }
-
-    window.addEventListener('error', (e) => {
-      console.error('[Admin Error]', e.message, e.filename, e.lineno, e.colno, e.error);
-      setStatus('JS Error: ' + e.message + '\n' + e.filename + ':' + e.lineno, true);
-    });
-
-    window.addEventListener('unhandledrejection', (e) => {
-      console.error('[Admin Error] Unhandled rejection:', e.reason);
-      setStatus('Unhandled: ' + e.reason, true);
-    });
-  </script>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js?v=20240723"></script>
+  <script src="https://unpkg.com/decap-cms@3.3.1/dist/decap-cms.js" defer></script>
 </body>
 </html>
