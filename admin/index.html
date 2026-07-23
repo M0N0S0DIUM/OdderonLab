@@ -96,10 +96,13 @@
     if (script) {
       // If script already loaded (readyState === 'complete' or 'loaded'), call onload handler immediately
       if (script.readyState === 'complete' || script.readyState === 'loaded') {
-        log('Script already loaded, checking globals...');
+        log('Script already loaded, starting check...');
         setTimeout(checkCMS, 50);
       } else {
-        script.onload = startChecking;
+        script.onload = function() {
+          log('Script loaded, checking globals...');
+          setTimeout(checkCMS, 50);
+        };
         script.onerror = function() {
           logError('Script failed to load');
         };
