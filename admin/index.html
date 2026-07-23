@@ -86,6 +86,11 @@
     }
 
     const script = document.querySelector('script[src*="netlify-cms"], script[src*="decap-cms"]');
+    function startChecking() {
+      log('Script loaded, checking globals...');
+      setTimeout(checkCMS, 50);
+    }
+
     if (script) {
       if (script.readyState === 'complete' || script.readyState === 'loaded') {
         log('Script already loaded, starting check...');
@@ -113,6 +118,6 @@
       setStatus('Unhandled: ' + e.reason, true);
     });
   </script>
-  <script src="https://unpkg.com/decap-cms@3.3.1/dist/decap-cms.js"></script>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 </body>
 </html>
