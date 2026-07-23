@@ -85,6 +85,7 @@
       }
     }
 
+    // Wait for script to load - check if already loaded
     const script = document.querySelector('script[src*="netlify-cms"], script[src*="decap-cms"]');
     function startChecking() {
       log('Script loaded, checking globals...');
@@ -92,6 +93,7 @@
     }
 
     if (script) {
+      // If script already loaded (readyState === 'complete' or 'loaded'), call onload handler immediately
       if (script.readyState === 'complete' || script.readyState === 'loaded') {
         log('Script already loaded, starting check...');
         setTimeout(checkCMS, 50);
@@ -105,6 +107,7 @@
         };
       }
     } else {
+      // No script tag found - maybe already loaded?
       setTimeout(checkCMS, 50);
     }
 
