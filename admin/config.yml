@@ -5,7 +5,6 @@ backend:
   name: github
   repo: msg33/OdderonLab
   branch: main
-  auth_type: github
   proxy_url: https://decap-cms-proxy.noobreaper333.workers.dev
   base_url: https://odderonlab.com
   site_domain: odderonlab.com
