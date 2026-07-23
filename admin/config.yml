@@ -7,6 +7,8 @@ backend:
   branch: main
   auth_type: github
   proxy_url: https://decap-cms-proxy.noobreaper333.workers.dev
+  base_url: https://odderonlab.com
+  site_domain: odderonlab.com
 
 media_folder: "images"
 public_folder: "/images"
@@ -58,6 +60,3 @@ collections:
           - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Description", name: "description", widget: "text"}
-
-# For local development with decap-cms-proxy-server
-local_backend: true
