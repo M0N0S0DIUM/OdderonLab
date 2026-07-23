@@ -3,11 +3,10 @@
 
 backend:
   name: github
-  repo: odderon/odderonlab
+  repo: msg33/OdderonLab
   branch: main
-  # Use Netlify Identity for auth (works on Vercel too)
-  # Or use github for direct GitHub OAuth
   auth_type: github
+  proxy_url: https://decap-cms-proxy.noobreaper333.workers.dev
 
 media_folder: "images"
 public_folder: "/images"
