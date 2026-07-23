@@ -86,17 +86,26 @@
       }
     }
 
-    // Wait for script to load
+    // Wait for script to load - handle both already-loaded and not-yet-loaded cases
     const script = document.querySelector('script[src*="netlify-cms"], script[src*="decap-cms"]');
+    function startChecking() {
+      log('Script loaded, checking globals...');
+      setTimeout(checkCMS, 50);
+    }
+
     if (script) {
-      script.onload = function() {
-        log('Script loaded, checking globals...');
+      // If script already loaded (readyState === 'complete' or 'loaded'), call onload handler immediately
+      if (script.readyState === 'complete' || script.readyState === 'loaded') {
+        log('Script already loaded, checking globals...');
         setTimeout(checkCMS, 50);
-      };
-      script.onerror = function() {
-        logError('Script failed to load');
-      };
+      } else {
+        script.onload = startChecking;
+        script.onerror = function() {
+          logError('Script failed to load');
+        };
+      }
     } else {
+      // No script tag found - maybe already loaded?
       setTimeout(checkCMS, 50);
     }
 
