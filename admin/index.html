@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Odderon Lab — Content Manager</title>
-  <script src="https://unpkg.com/decap-cms@3.3.1/dist/decap-cms.js"></script>
 </head>
 <body>
   <div id="decap-cms-root"></div>
@@ -39,7 +38,7 @@
 
     // Wait for DecapCMS to load with timeout
     let retries = 0;
-    const maxRetries = 50; // 5 seconds max
+    const maxRetries = 100; // 10 seconds max
 
     function checkDecapCMS() {
       const globals = checkGlobals();
@@ -71,11 +70,11 @@
         }
       } else {
         retries++;
-        if (retries < 50) {
-          log('DecapCMS not loaded, retry ' + retries + '/50...');
+        if (retries < 100) {
+          log('DecapCMS not loaded, retry ' + retries + '/100...');
           setTimeout(checkDecapCMS, 100);
         } else {
-          logError('DecapCMS failed to load after 5 seconds. Available globals: ' + JSON.stringify(checkGlobals()));
+          logError('DecapCMS failed to load after 10 seconds. Available globals: ' + JSON.stringify(checkGlobals()));
         }
       }
     }
@@ -86,6 +85,9 @@
       script.onload = function() {
         log('Script loaded, checking globals...');
         setTimeout(checkDecapCMS, 50);
+      };
+      script.onerror = function() {
+        logError('Script failed to load');
       };
     } else {
       // Fallback if script already loaded
@@ -102,5 +104,6 @@
       setStatus('Unhandled: ' + e.reason, true);
     });
   </script>
+  <script src="https://unpkg.com/decap-cms@3.3.1/dist/decap-cms.js"></script>
 </body>
 </html>
