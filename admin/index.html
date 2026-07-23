@@ -30,7 +30,7 @@
     // Check what globals are available
     function checkGlobals() {
       const globals = {};
-      ['DecapCMS', 'decapCMS', 'CMS', 'NetlifyCMS', 'decapCms'].forEach(name => {
+      ['CMS', 'NetlifyCMS', 'DecapCMS', 'decapCMS', 'decapCms', 'netlifyCMS'].forEach(name => {
         if (window[name]) globals[name] = typeof window[name];
       });
       return globals;
@@ -39,11 +39,27 @@
     let retries = 0;
     const maxRetries = 100;
 
-    function checkDecapCMS() {
+    function checkCMS() {
       const globals = checkGlobals();
       log('Globals check: ' + JSON.stringify(globals));
 
-      if (window.DecapCMS) {
+      if (window.CMS) {
+        log('CMS found, initializing...');
+        try {
+          window.CMS.init({ config: { load_config_file: true } });
+          log('CMS init called successfully');
+        } catch (e) {
+          logError('CMS init failed: ' + e.message, e);
+        }
+      } else if (window.NetlifyCMS) {
+        log('NetlifyCMS found, initializing...');
+        try {
+          window.NetlifyCMS.init({ config: { load_config_file: true } });
+          log('NetlifyCMS init called successfully');
+        } catch (e) {
+          logError('NetlifyCMS init failed: ' + e.message, e);
+        }
+      } else if (window.DecapCMS) {
         log('DecapCMS found, initializing...');
         try {
           window.DecapCMS.init({ config: { load_config_file: true } });
@@ -59,37 +75,29 @@
         } catch (e) {
           logError('decapCMS init failed: ' + e.message, e);
         }
-      } else if (window.CMS) {
-        log('CMS found, initializing...');
-        try {
-          window.CMS.init({ config: { load_config_file: true } });
-          log('CMS init called successfully');
-        } catch (e) {
-          logError('CMS init failed: ' + e.message, e);
-        }
       } else {
         retries++;
         if (retries < 100) {
-          log('DecapCMS not loaded, retry ' + retries + '/100...');
-          setTimeout(checkDecapCMS, 100);
+          log('CMS not loaded, retry ' + retries + '/100...');
+          setTimeout(checkCMS, 100);
         } else {
-          logError('DecapCMS failed to load after 10 seconds. Available globals: ' + JSON.stringify(checkGlobals()));
+          logError('CMS failed to load after 10 seconds. Available globals: ' + JSON.stringify(checkGlobals()));
         }
       }
     }
 
     // Wait for script to load
-    const script = document.querySelector('script[src*="decap-cms"]');
+    const script = document.querySelector('script[src*="netlify-cms"], script[src*="decap-cms"]');
     if (script) {
       script.onload = function() {
         log('Script loaded, checking globals...');
-        setTimeout(checkDecapCMS, 50);
+        setTimeout(checkCMS, 50);
       };
       script.onerror = function() {
         logError('Script failed to load');
       };
     } else {
-      setTimeout(checkDecapCMS, 50);
+      setTimeout(checkCMS, 50);
     }
 
     window.addEventListener('error', (e) => {
@@ -102,6 +110,6 @@
       setStatus('Unhandled: ' + e.reason, true);
     });
   </script>
-  <script src="https://unpkg.com/decap-cms@3.3.1/dist/decap-cms.js"></script>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 </body>
 </html>
