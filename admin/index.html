@@ -27,21 +27,8 @@
 
     log('Admin page loading...');
 
-    function checkGlobals() {
-      const globals = {};
-      ['CMS', 'NetlifyCMS', 'DecapCMS', 'decapCMS', 'decapCms', 'netlifyCMS'].forEach(name => {
-        if (window[name]) globals[name] = typeof window[name];
-      });
-      return globals;
-    }
-
-    let retries = 0;
-    const maxRetries = 100;
-
+    // The netlify-cms@2.10.192 exposes window.CMS
     function checkCMS() {
-      const globals = checkGlobals();
-      log('Globals check: ' + JSON.stringify(globals));
-
       if (window.CMS) {
         log('CMS found, initializing...');
         try {
@@ -58,57 +45,40 @@
         } catch (e) {
           logError('NetlifyCMS init failed: ' + e.message, e);
         }
-      } else if (window.DecapCMS) {
-        log('DecapCMS found, initializing...');
-        try {
-          window.DecapCMS.init({ config: { load_config_file: true } });
-          log('DecapCMS init called successfully');
-        } catch (e) {
-          logError('DecapCMS init failed: ' + e.message, e);
-        }
-      } else if (window.decapCMS) {
-        log('decapCMS found (lowercase), initializing...');
-        try {
-          window.decapCMS.init({ config: { load_config_file: true } });
-          log('decapCMS init called successfully');
-        } catch (e) {
-          logError('decapCMS init failed: ' + e.message, e);
-        }
+      } else if (window.CMS === undefined) {
+        // CMS not yet loaded
+        setTimeout(checkCMS, 50);
       } else {
-        retries++;
-        if (retries < 100) {
-          log('CMS not loaded, retry ' + retries + '/100...');
-          setTimeout(checkCMS, 100);
-        } else {
-          logError('CMS failed to load after 10 seconds. Available globals: ' + JSON.stringify(checkGlobals()));
-        }
+        logError('No CMS global found');
       }
     }
 
-    // Wait for script to load - check if already loaded
-    const script = document.querySelector('script[src*="netlify-cms"], script[src*="decap-cms"]');
+    // Check immediately, then retry
     function startChecking() {
-      log('Script loaded, checking globals...');
-      setTimeout(checkCMS, 50);
+      if (window.CMS || window.NetlifyCMS) {
+        checkCMS();
+      } else {
+        setTimeout(checkCMS, 50);
+      }
     }
 
+    // Wait for script to load
+    const script = document.querySelector('script[src*="netlify-cms"]');
     if (script) {
-      // If script already loaded (readyState === 'complete' or 'loaded'), call onload handler immediately
       if (script.readyState === 'complete' || script.readyState === 'loaded') {
-        log('Script already loaded, starting check...');
-        setTimeout(checkCMS, 50);
+        log('Script already loaded, checking CMS...');
+        setTimeout(startChecking, 50);
       } else {
         script.onload = function() {
-          log('Script loaded, checking globals...');
-          setTimeout(checkCMS, 50);
+          log('Script loaded, checking CMS...');
+          setTimeout(startChecking, 50);
         };
         script.onerror = function() {
           logError('Script failed to load');
         };
       }
     } else {
-      // No script tag found - maybe already loaded?
-      setTimeout(checkCMS, 50);
+      setTimeout(startChecking, 50);
     }
 
     window.addEventListener('error', (e) => {
