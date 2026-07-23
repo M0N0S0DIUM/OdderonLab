@@ -4,12 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Odderon Lab — Content Manager</title>
-  <script src="https://unpkg.com/decap-cms@^3.3.0/dist/decap-cms.js"></script>
+  <script src="https://unpkg.com/decap-cms@3.3.1/dist/decap-cms.js"></script>
 </head>
 <body>
+  <div id="decap-cms-root"></div>
   <script>
-    // CMS initializes automatically from config.yml
-    // GitHub OAuth handled via Cloudflare Worker proxy
+    // Force Decap CMS initialization
+    if (window.DecapCMS) {
+      console.log('DecapCMS loaded, initializing...');
+      window.DecapCMS.init({ config: { load_config_file: true } });
+    } else {
+      console.error('DecapCMS not loaded');
+      document.body.innerHTML += '<pre style="color:red;padding:20px;">DecapCMS failed to load. Check console.</pre>';
+    }
+  </script>
+  <script>
+    window.addEventListener('error', (e) => {
+      console.error('Global error:', e.message, e.filename, e.lineno, e.colno, e.error);
+      document.body.innerHTML += `<pre style="color:red;padding:20px;">JS Error: ${e.message}\n${e.filename}:${e.lineno}</pre>`;
+    });
+    window.addEventListener('unhandledrejection', (e) => {
+      console.error('Unhandled rejection:', e.reason);
+      document.body.innerHTML += `<pre style="color:red;padding:20px;">Unhandled: ${e.reason}</pre>`;
+    });
   </script>
 </body>
 </html>
