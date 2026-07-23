@@ -9,23 +9,37 @@
 <body>
   <div id="decap-cms-root"></div>
   <script>
-    // Force Decap CMS initialization
-    if (window.DecapCMS) {
-      console.log('DecapCMS loaded, initializing...');
-      window.DecapCMS.init({ config: { load_config_file: true } });
-    } else {
-      console.error('DecapCMS not loaded');
-      document.body.innerHTML += '<pre style="color:red;padding:20px;">DecapCMS failed to load. Check console.</pre>';
+    console.log('Admin page loading...', { 
+      DecapCMS: typeof window.DecapCMS, 
+      decapCMS: typeof window.decapCMS,
+      DecapCMS: window.DecapCMS
+    });
+    
+    // Wait for DecapCMS to load
+    function checkDecapCMS() {
+      if (window.DecapCMS) {
+        console.log('DecapCMS found, initializing...');
+        window.DecapCMS.init({ config: { load_config_file: true } });
+      } else if (window.decapCMS) {
+        console.log('decapCMS found (lowercase), initializing...');
+        window.decapCMS.init({ config: { load_config_file: true } });
+      } else {
+        console.log('DecapCMS not yet loaded, retrying in 100ms...');
+        setTimeout(checkDecapCMS, 100);
+      }
     }
-  </script>
-  <script>
+    
+    checkDecapCMS();
+    
+    // Global error handlers
     window.addEventListener('error', (e) => {
       console.error('Global error:', e.message, e.filename, e.lineno, e.colno, e.error);
-      document.body.innerHTML += `<pre style="color:red;padding:20px;">JS Error: ${e.message}\n${e.filename}:${e.lineno}</pre>`;
+      document.body.innerHTML += `<pre style="color:red;padding:20px;background:#111;">JS Error: ${e.message}\n${e.filename}:${e.lineno}</pre>`;
     });
+    
     window.addEventListener('unhandledrejection', (e) => {
       console.error('Unhandled rejection:', e.reason);
-      document.body.innerHTML += `<pre style="color:red;padding:20px;">Unhandled: ${e.reason}</pre>`;
+      document.body.innerHTML += `<pre style="color:red;padding:20px;background:#111;">Unhandled: ${e.reason}</pre>`;
     });
   </script>
 </body>
