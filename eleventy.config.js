@@ -6,11 +6,6 @@ const markdownItAnchor = require("markdown-it-anchor");
 const { DateTime } = require("luxon");
 const nunjucks = require("nunjucks");
 
-// ========================================
-// CREATE NUNJUCKS ENVIRONMENT WITH FILTERS PRE-REGISTERED
-// ========================================
-const nunjucksEnv = nunjucks.configure({ autoescape: true });
-
 const dateFilter = (dateObj, format = "MMMM yyyy") => {
   if (!dateObj) return "";
   const dt = typeof dateObj === "string" ? DateTime.fromISO(dateObj, {zone: 'utc'}) : DateTime.fromJSDate(dateObj, {zone: 'utc'});
@@ -21,13 +16,13 @@ const dateIsoFilter = (date) => {
   return new Date(date).toISOString();
 };
 
+// Create and configure Nunjucks environment FIRST (before module.exports)
+const nunjucksEnv = nunjucks.configure({ autoescape: true });
 nunjucksEnv.addFilter("date", dateFilter);
 nunjucksEnv.addFilter("dateIso", dateIsoFilter);
 
 module.exports = function(eleventyConfig) {
-  // ========================================
-  // USE PRE-CONFIGURED NUNJUCKS ENVIRONMENT
-  // ========================================
+  // Use the pre-configured Nunjucks environment
   eleventyConfig.setLibrary("njk", nunjucksEnv);
 
   // Also register as universal filters
@@ -62,26 +57,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy({ "_redirects": "/" });
-
-  // Manually copy styles.css using afterBuild event
-  eleventyConfig.on("eleventy.after", () => {
-    console.log("[ELEVENTY CONFIG] eleventy.after event fired");
-    const fs = require("fs");
-    const path = require("path");
-    const inputPath = path.join(process.cwd(), "styles.css");
-    const outputDir = path.join(process.cwd(), "_site");
-    const outputPath = path.join(outputDir, "styles.css");
-    console.log("[DEBUG] Checking for styles.css at:", inputPath);
-    console.log("[DEBUG] Output to:", outputPath);
-    console.log("[DEBUG] Exists:", fs.existsSync(inputPath));
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir, { recursive: true });
-    }
-    if (fs.existsSync(inputPath)) {
-      fs.copyFileSync(inputPath, outputPath);
-      console.log("[DEBUG] Copied styles.css to _site/");
-    }
-  });
 
   // Watch targets
   eleventyConfig.addWatchTarget("styles.css");
