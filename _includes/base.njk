@@ -55,7 +55,7 @@
     <div class="container nav-container">
       <div class="logo"><a href="/">Odderon Lab</a></div>
       <div class="nav-links">
-        <a href="/products/"{% if page.url == "/products/" %} aria-current="page"{% endif %}>Products</a>
+        <a href="/products/"{% if page.url == "/products/" or navSection == "products" %} aria-current="page"{% endif %}>Products</a>
         <a href="/labnotes/"{% if page.url == "/labnotes/" or navSection == "labnotes" %} aria-current="page"{% endif %}>Lab Notes</a>
         <a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
       </div>
@@ -69,7 +69,10 @@
   <footer>
     <div class="container footer-content">
       <p>Odderon Lab // {% year %}</p>
-      <p class="footer-tagline">Independent hardware. Practical tools.</p>
+      <div class="footer-meta">
+        <p class="footer-tagline">Independent hardware. Practical tools.</p>
+        <a class="footer-contact" href="mailto:jacob@odderonlab.com">jacob@odderonlab.com</a>
+      </div>
     </div>
   </footer>
 </body>

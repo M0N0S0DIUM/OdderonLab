@@ -2,13 +2,14 @@
 layout: base.njk
 title: Products
 description: Diagnostic hardware tools by Odderon Lab.
+navSection: products
 ---
 
 <section class="container page-content">
   <header class="page-intro">
     <p class="eyebrow">Hardware // Bench Tools</p>
     <h1>Products</h1>
-    <p>Purpose-built tools for protecting, testing, and debugging embedded hardware.</p>
+    <p>Released hardware from Odderon Lab. New work stays on the bench until it earns a place here.</p>
   </header>
 
   <article class="product-entry">
@@ -26,39 +27,19 @@ description: Diagnostic hardware tools by Odderon Lab.
         <li>Screw terminal connections</li>
         <li>Status LED</li>
       </ul>
-      <a href="https://www.tindie.com/products/41136/" target="_blank" rel="noopener" class="btn-primary">Buy on Tindie</a>
+      <div class="product-actions">
+        <a href="/products/devguard-24/" class="btn-secondary">Technical Details</a>
+        <a href="https://www.tindie.com/products/41136/" target="_blank" rel="noopener" class="btn-primary">Buy on Tindie</a>
+      </div>
     </div>
   </article>
 
-  <article class="product-entry coming-soon">
-    <div class="product-entry-copy">
-      <div class="entry-heading">
-        <h2>SensorSim</h2>
-        <span class="status-badge">In Development</span>
-      </div>
-      <p>Programmable sensor emulator for automotive and industrial ECU testing.</p>
-      <ul>
-        <li>0&ndash;5V / 0&ndash;12V analog output</li>
-        <li>Simulates pressure, temperature, throttle, fuel level</li>
-        <li>Fault injection modes</li>
-        <li>USB-C configurable</li>
-      </ul>
+  <aside class="product-bench-note">
+    <div>
+      <p class="eyebrow">Development Policy</p>
+      <h2>Working hardware before product promises.</h2>
+      <p>Early experiments and prototypes live in Lab Notes. Products appear here after they survive the bench.</p>
     </div>
-  </article>
-
-  <article class="product-entry coming-soon">
-    <div class="product-entry-copy">
-      <div class="entry-heading">
-        <h2>LogicSniff</h2>
-        <span class="status-badge">In Development</span>
-      </div>
-      <p>Compact logic analyzer with analog capture for embedded debugging.</p>
-      <ul>
-        <li>8 digital + 2 analog channels</li>
-        <li>24 MHz sample rate</li>
-        <li>PulseView / Sigrok compatible</li>
-        <li>USB-C powered</li>
-      </ul>
-    </div>
-  </article>
+    <a href="/labnotes/" class="note-link">Follow the Bench →</a>
+  </aside>
 </section>

@@ -1,0 +1,101 @@
+---
+layout: base.njk
+title: DevGuard 24
+description: Inline 3–24V DC protection for embedded systems, prototypes, and bench projects.
+permalink: /products/devguard-24/
+navSection: products
+image: /images/power-checker-hero.jpg
+imageAlt: DevGuard 24 inline protection module connected between a power source and a load
+imageWidth: 2048
+imageHeight: 1151
+---
+
+<section class="container page-content product-detail">
+  <header class="product-detail-hero">
+    <div class="product-detail-copy">
+      <div class="product-detail-status">
+        <span class="status-badge status-available">Available</span>
+        <span>3&ndash;24V DC // 500mA or 1100mA</span>
+      </div>
+      <h1>DevGuard 24</h1>
+      <p class="product-lead">
+        Inline protection for the wiring mistake you only need to make once.
+        DevGuard 24 sits between a DC source and your project to block reverse polarity,
+        clamp voltage spikes, and limit sustained overcurrent.
+      </p>
+      <div class="product-actions">
+        <a href="https://www.tindie.com/products/odderonlab/devguard-24-inline-324v-protection-module/" target="_blank" rel="noopener" class="btn-primary">Buy on Tindie</a>
+        <a href="#specifications" class="btn-secondary">View Specifications</a>
+      </div>
+    </div>
+
+    <figure class="product-detail-image">
+      <img src="/images/power-checker-hero.jpg" alt="DevGuard 24 installed inline between red and black DC power wires" width="2048" height="1151">
+      <figcaption>Source to IN. Project to OUT. No configuration required.</figcaption>
+    </figure>
+  </header>
+
+  <section class="product-section" aria-labelledby="protection-heading">
+    <header class="section-heading">
+      <p class="eyebrow">Protection // Three Layers</p>
+      <h2 id="protection-heading">Small board. Focused job.</h2>
+    </header>
+
+    <div class="protection-grid">
+      <article class="protection-card">
+        <span class="protection-index">01</span>
+        <h3>Reverse Polarity</h3>
+        <p>A P-channel MOSFET blocks power when the source is connected backward, without putting a series diode in the normal current path.</p>
+      </article>
+      <article class="protection-card">
+        <span class="protection-index">02</span>
+        <h3>Surge Clamp</h3>
+        <p>A TVS diode suppresses short voltage spikes before they reach the protected circuit.</p>
+      </article>
+      <article class="protection-card">
+        <span class="protection-index">03</span>
+        <h3>Resettable Fuse</h3>
+        <p>A polyfuse limits sustained fault current, then resets after the fault is removed and the device cools.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="product-spec-section" id="specifications" aria-labelledby="specifications-heading">
+    <div class="spec-panel">
+      <p class="eyebrow">Technical // Rev A</p>
+      <h2 id="specifications-heading">Specifications</h2>
+      <dl class="spec-list">
+        <div><dt>Input range</dt><dd>Approximately 3&ndash;24V DC</dd></div>
+        <div><dt>Protection</dt><dd>Reverse polarity, TVS surge clamp, resettable overcurrent fuse</dd></div>
+        <div><dt>Available ratings</dt><dd>500mA or 1100mA</dd></div>
+        <div><dt>Connections</dt><dd>Marked input and output screw terminals</dd></div>
+        <div><dt>Indicator</dt><dd>Power-status LED</dd></div>
+        <div><dt>Configuration</dt><dd>None</dd></div>
+      </dl>
+    </div>
+
+    <aside class="usage-panel" aria-labelledby="installation-heading">
+      <p class="eyebrow">Installation // Inline</p>
+      <h2 id="installation-heading">Connect and continue.</h2>
+      <ol class="usage-list">
+        <li>Disconnect power from the project.</li>
+        <li>Connect the DC source to the marked IN terminals.</li>
+        <li>Connect the protected project to the marked OUT terminals.</li>
+        <li>Restore power and confirm the status LED.</li>
+      </ol>
+      <p class="spec-note">
+        DevGuard 24 is a protection module, not a voltage regulator or isolated converter.
+        Select the fuse version appropriate for the expected load.
+      </p>
+    </aside>
+  </section>
+
+  <section class="product-cta">
+    <div>
+      <p class="eyebrow">Available Now</p>
+      <h2>Cheap insurance for expensive mistakes.</h2>
+      <p>Choose the 500mA or 1100mA version on Tindie. Questions before ordering? <a href="mailto:jacob@odderonlab.com">jacob@odderonlab.com</a></p>
+    </div>
+    <a href="https://www.tindie.com/products/odderonlab/devguard-24-inline-324v-protection-module/" target="_blank" rel="noopener" class="btn-primary">View Options &amp; Buy</a>
+  </section>
+</section>
