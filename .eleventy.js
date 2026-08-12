@@ -12,14 +12,16 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
+  eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("admin");
 
   eleventyConfig.addWatchTarget("styles.css");
 
   eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("posts/*.md").sort((a, b) => {
-      return b.date - a.date;
-    });
+    return collectionApi
+      .getFilteredByGlob("posts/*.md")
+      .filter((post) => !post.data.draft)
+      .sort((a, b) => b.date - a.date);
   });
 
   eleventyConfig.addFilter("readableDate", (dateValue) => {
@@ -28,6 +30,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("htmlDateString", (dateValue) => {
     return toUtcDate(dateValue).toFormat("yyyy-LL-dd");
+  });
+
+  eleventyConfig.addFilter("dateToRfc3339", (dateValue) => {
+    return toUtcDate(dateValue).toISO({ suppressMilliseconds: true });
   });
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);

@@ -3,6 +3,10 @@ layout: post.njk
 title: "Lab Note #005 — The Infrabass Appliance"
 date: 2026-08-12
 description: "Two car subwoofers, an automotive amplifier, and an ATX power supply meet a perfectly respectable desktop hi-fi."
+image: /images/labnotes/infrabass-appliance-social.jpg
+imageAlt: "Two Pioneer 12-inch subwoofers with a SKAR car amplifier and an EVGA ATX power supply"
+imageWidth: 1200
+imageHeight: 630
 draft: false
 ---
 

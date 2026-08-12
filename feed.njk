@@ -1,0 +1,23 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Odderon Lab — Lab Notes</title>
+  <subtitle>Experiments, failures, and useful fixes from the bench.</subtitle>
+  <link href="https://www.odderonlab.com/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://www.odderonlab.com/labnotes/"/>
+  <id>https://www.odderonlab.com/labnotes/</id>
+  <updated>{{ collections.posts[0].date | dateToRfc3339 }}</updated>
+  <author><name>Odderon Lab</name></author>
+{% for post in collections.posts %}
+  <entry>
+    <title>{{ post.data.title | escape }}</title>
+    <link href="https://www.odderonlab.com{{ post.url }}"/>
+    <id>https://www.odderonlab.com{{ post.url }}</id>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <summary>{{ post.data.description | escape }}</summary>
+  </entry>
+{% endfor %}
+</feed>

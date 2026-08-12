@@ -2,10 +2,10 @@
   "name": "Odderon Lab",
   "short_name": "Odderon Lab",
   "description": "Precision diagnostic tools for embedded engineers",
-  "start_url": "/index.html",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#0d0d0d",
-  "theme_color": "#00ff88",
+  "background_color": "#080a11",
+  "theme_color": "#080a11",
   "icons": [
     {
       "src": "images/favicon-192x192.png",
