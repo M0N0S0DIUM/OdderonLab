@@ -12,14 +12,14 @@ The regular desktop system sounds excellent, but its small home subwoofer polite
 
 Naturally, I chose the second option.
 
-The first power-up produced less infrabass and more laboratory-grade 60 Hz hum. Loud, clean, and completely unaffected by the volume control, it was an extraordinarily successful oscillator and a terrible subwoofer. That led down the familiar path of grounding, signal isolation, and discovering what happens when consumer audio equipment is introduced to a car amplifier living under a desk.
+The first power-up produced less infrabass and more laboratory-grade 60 Hz hum. Loud, clean, and completely unaffected by the volume control, it was an extraordinarily successful oscillator and a terrible subwoofer. That led down the familiar path of grounding, signal isolation, and discovering what happens when consumer audio equipment is introduced to a car amplifier living beside a desk.
 
 The objective is not simply “more bass.” The little Dayton already handles normal bass beautifully. This monstrosity exists only for the lowest octave—the nearly inaudible information that makes the room feel larger and causes loose objects to reconsider their location.
 
-Next comes proper isolation, aggressive low-pass filtering, and seeing how far this deeply inappropriate collection of hardware can reach without damaging itself, the house, or my standing with the neighbors.
+Next comes proper isolation, aggressive low-pass filtering, and seeing how far this deeply inappropriate collection of hardware can reach without damaging itself, the house, or anything resting unsecured nearby.
 
 In engineering terms, it is a prototype.
 
 In household terms, there is now a car stereo in the office.
 
-Paige approved the experiment, which is effectively regulatory certification.
+The experiment has household approval, which is effectively regulatory certification.
