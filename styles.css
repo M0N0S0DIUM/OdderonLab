@@ -1393,3 +1393,85 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================
+   ODDERON LAB — FINAL OPTICAL POLISH
+   ============================================ */
+
+:root {
+  --text-muted: #9bb7cc;
+  --text-dim: #6d8599;
+}
+
+html {
+  scroll-padding-top: 90px;
+}
+
+h1 {
+  text-shadow:
+    0 0 8px rgba(0, 255, 240, 0.48),
+    0 0 28px rgba(0, 255, 240, 0.14);
+}
+
+h2 {
+  text-shadow: 0 0 6px rgba(255, 45, 149, 0.36);
+}
+
+h3 {
+  text-shadow: 0 0 5px rgba(0, 255, 240, 0.32);
+}
+
+.nav-links {
+  gap: 8px;
+}
+
+.product-card,
+.product-entry,
+.bench-note-card,
+.principles-panel,
+.note-card,
+.blog-post {
+  border-radius: 3px;
+}
+
+.page-content .btn-primary,
+.page-content .btn-primary:hover {
+  color: #071011;
+  border: 0;
+}
+
+.page-content .product-entry li::before {
+  content: '▸';
+  top: 6px;
+  color: var(--pink);
+  font-size: 0.9rem;
+}
+
+.bench-note-card .btn-secondary {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.post-body em {
+  display: inline;
+  margin: 0;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1em;
+  font-style: italic;
+  letter-spacing: normal;
+}
+
+footer {
+  color: var(--text-dim);
+}
+
+@media (max-width: 720px) {
+  html {
+    scroll-padding-top: 126px;
+  }
+
+  .bench-note-card .btn-secondary {
+    white-space: normal;
+  }
+}
