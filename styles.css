@@ -142,7 +142,7 @@ h3 {
 }
 
 .nav-links a:hover::after {
-  width: 100%;
+  width: calc(100% - 24px);
 }
 
 /* --- Hero --- */
