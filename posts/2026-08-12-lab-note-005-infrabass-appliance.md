@@ -23,5 +23,3 @@ In engineering terms, it is a prototype.
 In household terms, there is now a car stereo in the office.
 
 Paige approved the experiment, which is effectively regulatory certification.
-
-— Odderon Lab

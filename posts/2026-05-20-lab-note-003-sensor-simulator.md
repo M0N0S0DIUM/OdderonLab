@@ -41,5 +41,3 @@ I suspect there are plenty of niche debugging tools that don't exist simply beca
 If you work on ECUs, industrial controls or embedded systems and have thoughts on what sensors are most annoying to test without real hardware attached, I'd genuinely like to hear about it.
 
 This one may end up becoming something larger than originally planned.
-
-— Odderon Lab

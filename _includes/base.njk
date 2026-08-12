@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080a11">
+  <meta name="color-scheme" content="dark">
   <title>{{ title }} | Odderon Lab</title>
   {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -16,33 +20,33 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512x512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
-
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
-
 <body>
-  <nav class="nav">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <nav class="nav" aria-label="Primary navigation">
     <div class="container nav-container">
       <div class="logo"><a href="/">Odderon Lab</a></div>
       <div class="nav-links">
-        <a href="/products/">Products</a>
-        <a href="/labnotes/">Lab Notes</a>
-        <a href="/about/">About</a>
+        <a href="/products/"{% if page.url == "/products/" %} aria-current="page"{% endif %}>Products</a>
+        <a href="/labnotes/"{% if page.url == "/labnotes/" %} aria-current="page"{% endif %}>Lab Notes</a>
+        <a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
       </div>
     </div>
   </nav>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     {{ content | safe }}
   </main>
 
   <footer>
     <div class="container footer-content">
-      <p>&copy; 2026 Odderon Lab</p>
-      <p>Tools built for engineers.</p>
+      <p>&copy; {% year %} Odderon Lab</p>
+      <p class="footer-tagline">Independent hardware. Practical tools.</p>
     </div>
   </footer>
 </body>

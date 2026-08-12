@@ -19,5 +19,3 @@ The fix: I pulled a pulldown resistor off the board and used its pad to solder a
 It works. Board runs, LEDs shut off properly, battery life is back where it should be. And it's got more character than it had before.
 
 Next revision gets more test points. But this one stays on the bench as a reminder.
-
-— Odderon Lab

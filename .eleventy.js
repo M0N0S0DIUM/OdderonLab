@@ -1,22 +1,35 @@
-// .eleventy.js
+const { DateTime } = require("luxon");
+
+const toUtcDate = (dateValue) => {
+  if (dateValue instanceof Date) {
+    return DateTime.fromJSDate(dateValue, { zone: "utc" });
+  }
+
+  return DateTime.fromISO(String(dateValue), { zone: "utc" });
+};
+
 module.exports = function(eleventyConfig) {
-  // Copy static assets
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy("admin");
 
-  // Watch CSS for dev server
   eleventyConfig.addWatchTarget("styles.css");
 
-  // Collections: blog posts from posts/*.md
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("posts/*.md").sort((a, b) => {
       return b.date - a.date;
     });
   });
 
-  // Shortcodes
+  eleventyConfig.addFilter("readableDate", (dateValue) => {
+    return toUtcDate(dateValue).toFormat("dd LLL yyyy");
+  });
+
+  eleventyConfig.addFilter("htmlDateString", (dateValue) => {
+    return toUtcDate(dateValue).toFormat("yyyy-LL-dd");
+  });
+
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   return {

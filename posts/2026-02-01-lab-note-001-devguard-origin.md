@@ -1,4 +1,5 @@
 ---
+layout: post.njk
 title: "Lab Note #001 — The Board I Built After Frying Too Many Dev Kits"
 date: 2026-02-01
 description: "The origin story of DevGuard 24 — an inline protection board born from too many fried dev boards."
@@ -41,5 +42,3 @@ Just something that sits there quietly and takes the hit instead of your board.
 If that sounds useful, you can find it on our [Products page](/products/).
 
 More small lab tools coming soon.
-
-— Odderon Lab

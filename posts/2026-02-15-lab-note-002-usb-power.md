@@ -1,4 +1,5 @@
 ---
+layout: post.njk
 title: "Lab Note #002 — Is USB 5V Good Enough?"
 date: 2026-02-15
 description: "Why I stopped trusting USB VBUS and added a buck-boost converter. Small decisions that separate prototypes from bench tools."
@@ -38,5 +39,3 @@ Small decisions like this are starting to define whether this stays a prototype 
 If you've built something similar and have strong opinions about USB power architecture, I'd genuinely like to hear them.
 
 Reach out at <a href="mailto:odderonlab@protonmail.com">odderonlab@protonmail.com</a>.
-
-— Odderon Lab
