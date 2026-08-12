@@ -1213,6 +1213,31 @@ button:focus-visible,
   font-size: 0.88em;
 }
 
+.post-figure {
+  margin: 32px 0 36px;
+}
+
+.post-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--bg);
+  border: 1px solid rgba(0, 255, 240, 0.22);
+  border-radius: 3px;
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.3),
+    0 0 24px rgba(0, 255, 240, 0.07);
+}
+
+.post-figure figcaption {
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  line-height: 1.55;
+}
+
 .post-signoff {
   display: flex;
   align-items: center;

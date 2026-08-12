@@ -12,6 +12,11 @@ The regular desktop system sounds excellent, but its small home subwoofer polite
 
 Naturally, I chose the second option.
 
+<figure class="post-figure">
+  <img src="/images/labnotes/infrabass-appliance.webp" alt="Two Pioneer 12-inch subwoofers with a SKAR car amplifier and EVGA ATX power supply resting on the enclosure" width="1600" height="1200">
+  <figcaption>The entirely reasonable infrabass appliance: two Pioneer 12-inch subs, a SKAR amplifier, and an ATX power supply.</figcaption>
+</figure>
+
 The first power-up produced less infrabass and more laboratory-grade 60 Hz hum. Loud, clean, and completely unaffected by the volume control, it was an extraordinarily successful oscillator and a terrible subwoofer. That led down the familiar path of grounding, signal isolation, and discovering what happens when consumer audio equipment is introduced to a car amplifier living beside a desk.
 
 The objective is not simply “more bass.” The little Dayton already handles normal bass beautifully. This monstrosity exists only for the lowest octave—the nearly inaudible information that makes the room feel larger and causes loose objects to reconsider their location.
