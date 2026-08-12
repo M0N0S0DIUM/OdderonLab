@@ -1,0 +1,27 @@
+---
+layout: post.njk
+title: "Lab Note #005 — The Infrabass Appliance"
+date: 2026-08-12
+description: "Two car subwoofers, an automotive amplifier, and an ATX power supply meet a perfectly respectable desktop hi-fi."
+draft: false
+---
+
+Most hi-fi upgrades begin with a nicer DAC or better speakers. This one began with two old 12-inch car subwoofers and the dangerous thought: *I already own these.*
+
+The regular desktop system sounds excellent, but its small home subwoofer politely leaves the room below about 35 Hz. Buying a sensible replacement was one option. The other was combining a SKAR automotive amplifier, two Pioneer subs in a sealed enclosure, a retired ATX computer power supply, and enough cabling to raise legitimate questions.
+
+Naturally, I chose the second option.
+
+The first power-up produced less infrabass and more laboratory-grade 60 Hz hum. Loud, clean, and completely unaffected by the volume control, it was an extraordinarily successful oscillator and a terrible subwoofer. That led down the familiar path of grounding, signal isolation, and discovering what happens when consumer audio equipment is introduced to a car amplifier living under a desk.
+
+The objective is not simply “more bass.” The little Dayton already handles normal bass beautifully. This monstrosity exists only for the lowest octave—the nearly inaudible information that makes the room feel larger and causes loose objects to reconsider their location.
+
+Next comes proper isolation, aggressive low-pass filtering, and seeing how far this deeply inappropriate collection of hardware can reach without damaging itself, the house, or my standing with the neighbors.
+
+In engineering terms, it is a prototype.
+
+In household terms, there is now a car stereo in the office.
+
+Paige approved the experiment, which is effectively regulatory certification.
+
+— Odderon Lab
