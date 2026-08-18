@@ -1,5 +1,17 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "_site",
-  "framework": "eleventy"
+  "framework": "eleventy",
+  "redirects": [
+    {
+      "source": "/labnotes.html",
+      "destination": "/labnotes/",
+      "permanent": true
+    },
+    {
+      "source": "/devguard/",
+      "destination": "/products/devguard-24/",
+      "permanent": true
+    }
+  ]
 }

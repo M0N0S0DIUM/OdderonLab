@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {% for item in collections.all %}
-  {% if item.url and not item.data.draft %}
+  {% if item.url and not item.data.draft and item.data.sitemap != false %}
   <url>
     <loc>https://www.odderonlab.com{{ item.url }}</loc>
     {% if item.data.layout == "post.njk" %}<lastmod>{{ item.date | dateToRfc3339 }}</lastmod>{% endif %}
