@@ -1,7 +1,7 @@
 {
   "name": "Odderon Lab",
   "short_name": "Odderon Lab",
-  "description": "Precision diagnostic tools for embedded engineers",
+  "description": "Independent hardware tools for engineers, technicians, and makers",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#080a11",
