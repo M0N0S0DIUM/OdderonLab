@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   {% set siteUrl = "https://www.odderonlab.com" %}
-  {% set fullTitle = title ~ " | Odderon Lab" %}
+  {% set fullTitle = "Odderon Lab" if page.url == "/" else title ~ " | Odderon Lab" %}
   {% set resolvedCanonical = canonical or (siteUrl ~ page.url) %}
   {% set socialImagePath = image or "/images/power-checker-hero.jpg" %}
   {% set socialImageUrl = siteUrl ~ socialImagePath %}
@@ -33,15 +33,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico?v=waveform-2">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48x48.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64x64.png">
-  <link rel="icon" type="image/png" sizes="128x128" href="/images/favicon-128x128.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512x512.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=waveform-2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=waveform-2">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48x48.png?v=waveform-2">
+  <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon-64x64.png?v=waveform-2">
+  <link rel="icon" type="image/png" sizes="128x128" href="/images/favicon-128x128.png?v=waveform-2">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192x192.png?v=waveform-2">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512x512.png?v=waveform-2">
   <link rel="icon" type="image/svg+xml" sizes="any" href="/images/odderon-logo.svg?v=2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=waveform-2">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="alternate" type="application/atom+xml" title="Odderon Lab — Lab Notes" href="/feed.xml">
   <script>
