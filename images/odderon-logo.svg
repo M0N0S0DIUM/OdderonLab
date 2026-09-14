@@ -10,6 +10,6 @@
   </defs>
   <g stroke="url(#spectrum)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="64" cy="64" r="50"/>
-    <path d="M13 66 H32 L37 76 L53 42 L70 86 L87 51 L94 65 H114"/>
+    <path d="M15 66 H32 L37 76 L53 42 L70 86 L87 51 L94 65 H114"/>
   </g>
 </svg>
