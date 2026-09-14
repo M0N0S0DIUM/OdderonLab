@@ -31,7 +31,7 @@
   <meta name="twitter:image:alt" content="{{ socialImageAlt }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=20260914-refresh">
   <link rel="icon" type="image/x-icon" href="/favicon.ico?v=waveform-2">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=waveform-2">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=waveform-2">
@@ -59,6 +59,7 @@
         <a href="/products/"{% if page.url == "/products/" or navSection == "products" %} aria-current="page"{% endif %}>Products</a>
         <a href="/labnotes/"{% if page.url == "/labnotes/" or navSection == "labnotes" %} aria-current="page"{% endif %}>Lab Notes</a>
         <a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
+        <a href="/about/#contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -71,7 +72,7 @@
     <div class="container footer-content">
       <p>Odderon Lab // {% year %}</p>
       <div class="footer-meta">
-        <p class="footer-tagline">Independent hardware. Practical tools.</p>
+        <p class="footer-tagline">Hardware + software. Built at the bench.</p>
         <a class="footer-contact" href="mailto:jacob@odderonlab.com">jacob@odderonlab.com</a>
       </div>
     </div>
