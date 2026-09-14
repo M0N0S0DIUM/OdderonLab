@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 128 128" fill="none">
+  <title>Odderon Lab waveform logo</title>
+  <defs>
+    <linearGradient id="spectrum" x1="13" y1="64" x2="115" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D3F5"/>
+      <stop offset="0.38" stop-color="#5E88BE"/>
+      <stop offset="0.65" stop-color="#AF4497"/>
+      <stop offset="1" stop-color="#F00891"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#spectrum)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="64" cy="64" r="50"/>
+    <path d="M13 66 H32 L37 76 L53 42 L70 86 L87 51 L94 65 H114"/>
+  </g>
+</svg>

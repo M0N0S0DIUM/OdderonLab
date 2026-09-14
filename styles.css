@@ -1861,3 +1861,7 @@ footer {
     gap: 5px;
   }
 }
+
+/* Shared waveform brand mark */
+.logo .brand-link { display: inline-flex; align-items: center; gap: 10px; }
+.brand-mark { display: block; width: 40px; height: 40px; flex: 0 0 40px; }
