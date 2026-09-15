@@ -1,54 +1,64 @@
 ---
 layout: base.njk
 title: Odderon Lab
-description: Practical hardware and software for the bench. Compare speaker measurements with DriverBench and protect DC projects with DevGuard 24.
+description: Small-run audio hardware, test equipment, and useful electronics built at the bench by Jacob Terry.
 ---
 
 <header class="home-intro container">
   <div class="home-intro-copy">
-    <p class="eyebrow">Independent hardware + software</p>
-    <h1>Tools for speaker testing and electronics work.</h1>
-    <p>Compare measurements. Keep useful records. Protect the project on your bench. Small, focused tools from Odderon Lab.</p>
+    <h1>Hardware for the bench.</h1>
+    <p>Odderon Lab is my small hardware shop in Louisiana. I build audio gear, test equipment, and useful electronics that usually start with a problem I run into at my own bench.</p>
     <div class="hero-buttons">
-      <a href="/driverbench-preview/" class="btn-primary">Explore DriverBench</a>
-      <a href="#tools" class="btn-secondary">See the tools</a>
+      <a href="#on-the-bench" class="btn-primary">See what I’m building</a>
+      <a href="/labnotes/" class="btn-secondary">Lab notes</a>
     </div>
     <p class="home-byline">Built by Jacob Terry in Louisiana.</p>
   </div>
-  <aside class="workflow-panel" aria-labelledby="workflow-title">
-    <div class="workflow-heading"><img src="/images/odderon-logo.svg?v=2" width="48" height="48" alt=""><span class="eyebrow">DriverBench Preview</span></div>
-    <h2 id="workflow-title">From sweep to<br>useful record.</h2>
-    <ol class="workflow-list">
-      <li><span>01</span><div><strong>Import</strong><p>Bring in an existing CSV or ZMA impedance sweep.</p></div></li>
-      <li><span>02</span><div><strong>Compare</strong><p>Check a pair of drivers or compare against a reference.</p></div></li>
-      <li><span>03</span><div><strong>Keep the result</strong><p>Save job details and export reports and data.</p></div></li>
-    </ol>
-    <p class="workflow-footnote">Analysis software for measurements you already have.</p>
-  </aside>
+  <figure class="product-detail-image">
+    <img src="/images/power-checker.jpg" width="2048" height="1151" alt="Electronics hardware on the Odderon Lab workbench">
+    <figcaption>One of the things that made it off the bench: DevGuard 24.</figcaption>
+  </figure>
 </header>
 
-<section class="container home-tools" id="tools" aria-labelledby="tools-title">
-  <div class="home-section-heading"><div><p class="eyebrow">Available now</p><h2 id="tools-title">Two tools. Two specific jobs.</h2></div><a href="/products/" class="text-link">All products →</a></div>
-  <div class="tool-grid">
-    <article class="tool-card">
-      <div class="tool-card-heading"><span class="tool-category">Software preview</span><span class="tool-price">$15</span></div>
-      <h3>DriverBench</h3>
-      <p>Turn loudspeaker impedance sweeps into saved records, driver comparisons, and shareable reports.</p>
-      <ul><li>CSV and ZMA import</li><li>Pair and reference comparison</li><li>Job details, reports, and open data exports</li></ul>
-      <p class="tool-requirement">Requires Python 3.10+ and existing measurement data.</p>
-      <div class="product-actions"><a href="/driverbench-preview/" class="btn-primary">See DriverBench Preview</a></div>
-    </article>
-    <article class="tool-card hardware-card">
-      <div class="tool-card-heading"><span class="tool-category">Hardware</span><span class="tool-price">3–24 V DC</span></div>
-      <h3>DevGuard 24</h3>
-      <img class="tool-photo" src="/images/power-checker-hero.jpg" width="2048" height="1151" alt="DevGuard 24 inline DC protection module" loading="lazy">
-      <p>Inline reverse-polarity, surge, and resettable overcurrent protection for DC prototypes and bench projects.</p>
-      <div class="product-actions"><a href="/products/devguard-24/" class="btn-secondary">See DevGuard 24</a></div>
-    </article>
+<section class="container home-about" id="on-the-bench" aria-labelledby="bench-title">
+  <div>
+    <p class="eyebrow">On the bench now</p>
+    <h2 id="bench-title">Speaker measurement</h2>
+    <p>I’m working on a low-cost way to measure, compare, and keep track of loudspeaker drivers without turning the process into a pile of screenshots and spreadsheets.</p>
+    <p>The measurement hardware is still in development. DriverBench is the software side of that work and is available now as an early preview.</p>
+    <a class="text-link" href="/driverbench-preview/">Take a look at DriverBench →</a>
+  </div>
+  <div class="home-notes">
+    <h3>Why I’m building it</h3>
+    <p>I wanted a repeatable way to test drivers, keep the measurements, and compare what changed. The current project grew out of solving that problem on my own bench.</p>
+    <p>No big product pitch yet. I’m building it, testing it, and figuring out where it is actually useful.</p>
+  </div>
+</section>
+
+<section class="container home-about" aria-labelledby="built-title">
+  <div>
+    <p class="eyebrow">Something I built</p>
+    <h2 id="built-title">DevGuard 24</h2>
+    <p>DevGuard started because I wanted something between my bench supply and whatever questionable prototype I was powering that day.</p>
+    <p>It’s a small inline board for 3–24 V DC projects with reverse-polarity, overcurrent, and transient protection.</p>
+    <a class="text-link" href="/products/devguard-24/">See DevGuard 24 →</a>
+  </div>
+  <div class="home-notes">
+    <img class="tool-photo" src="/images/power-checker-hero.jpg" width="2048" height="1151" alt="DevGuard 24 inline DC protection module" loading="lazy">
+    <p>Not everything here needs to become a giant product line. If something earns a permanent spot on my bench, it has a decent chance of ending up here.</p>
   </div>
 </section>
 
 <section class="container home-about" aria-labelledby="home-about-title">
-  <div><p class="eyebrow">Behind the bench</p><h2 id="home-about-title">Hi, I’m Jacob.</h2><p>I build hardware and software for the work I do at my own bench. Odderon Lab is where I turn those projects into tools other people can use.</p><a class="text-link" href="/about/">More about Odderon Lab →</a></div>
-  <div class="home-notes"><p class="eyebrow">Lab Notes</p><h3>The work behind the tools.</h3><p>Prototypes, debugging, design decisions, and what happened when I tried them.</p><a class="text-link" href="/labnotes/">Read the lab notes →</a></div>
+  <div>
+    <h2 id="home-about-title">Hi, I’m Jacob.</h2>
+    <p>Odderon Lab is my small hardware company. Most projects here start because I need something, can’t find quite what I want, or think the existing way of doing it is more annoying than it needs to be.</p>
+    <p>I design the boards, write the software, build the prototypes, break things, fix them, and document the useful parts here.</p>
+    <a class="text-link" href="/about/">More about Odderon Lab →</a>
+  </div>
+  <div class="home-notes">
+    <h3>Lab Notes</h3>
+    <p>Prototypes, debugging, design decisions, wrong turns, and what happened when I actually tried the thing.</p>
+    <a class="text-link" href="/labnotes/">Read the lab notes →</a>
+  </div>
 </section>
