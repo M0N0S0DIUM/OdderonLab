@@ -1,104 +1,92 @@
 ---
 layout: base.njk
 title: Odderon Lab
-description: Independent electronics lab in Louisiana building small-run audio hardware, bench tools, and useful electronics.
+description: Small-run audio hardware, test tools, and useful electronics built at the bench in Louisiana.
 ---
 
-<header class="quiet-hero container">
-  <p class="quiet-kicker">Independent electronics lab · Louisiana</p>
-  <h1>Small electronics for real benches.</h1>
-  <p class="quiet-lead">Audio hardware, test tools, and useful oddities designed, built, and tested by one person.</p>
+<header class="hero hero-split">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">Odderon Lab // Electronics</p>
+      <h1>Hardware that fixes annoying problems.</h1>
+      <p>Small-run audio hardware, test tools, and useful electronics built at the bench in Louisiana.</p>
+
+      <div class="hero-buttons">
+        <a href="/products/" class="btn-primary">Products</a>
+        <a href="/labnotes/" class="btn-secondary">Lab Notes</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="/images/power-checker-hero.jpg" width="1600" height="900" alt="DevGuard 24 inline protection module">
+    </div>
+  </div>
 </header>
 
-<section class="quiet-feature container" aria-labelledby="available-title">
-  <div class="quiet-section-head">
-    <p class="quiet-label">Available</p>
-    <h2 id="available-title">Things that made it off the bench.</h2>
+<section class="featured">
+  <div class="container">
+    <div class="section-marker">
+      <span>Available now</span>
+      <span>02 tools</span>
+    </div>
+
+    <article class="product-card">
+      <img src="/images/power-checker.jpg" width="2048" height="1151" alt="Close-up of the DevGuard 24 protection module">
+
+      <div class="product-info">
+        <p class="eyebrow">Hardware // DevGuard 24</p>
+        <h2>Inline protection for 3–24 V DC projects.</h2>
+        <p>Reverse-polarity protection, transient suppression, and a resettable fuse in one small board.</p>
+        <dl class="compact-specs">
+          <div><dt>Input</dt><dd>3–24 V DC</dd></div>
+          <div><dt>Versions</dt><dd>500 mA / 1.1 A</dd></div>
+          <div><dt>Status</dt><dd>Available</dd></div>
+        </dl>
+        <div class="product-actions">
+          <a href="/products/devguard-24/" class="btn-secondary">Details</a>
+          <a href="https://www.tindie.com/products/odderonlab/devguard-24-inline-324v-protection-module/" target="_blank" rel="noopener" class="btn-primary">Tindie</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="software-strip">
+      <div>
+        <p class="eyebrow">Software // DriverBench Preview</p>
+        <h2>Make impedance sweeps easier to keep and compare.</h2>
+        <p>Import existing loudspeaker measurements, compare drivers, and save the useful context with the result.</p>
+      </div>
+      <div class="software-strip-meta">
+        <span>Python 3.10+</span>
+        <span>$15 preview</span>
+        <a href="/driverbench-preview/" class="text-link">Details →</a>
+      </div>
+    </article>
   </div>
-
-  <article class="quiet-product quiet-product-photo">
-    <div class="quiet-product-copy">
-      <div class="quiet-meta"><span>01 / Hardware</span><span>3–24 V DC</span></div>
-      <h3>DevGuard 24</h3>
-      <p>Inline reverse-polarity, transient, and resettable overcurrent protection for small DC projects.</p>
-      <a class="quiet-link" href="/products/devguard-24/">View DevGuard 24 →</a>
-    </div>
-    <a class="quiet-image-link" href="/products/devguard-24/" aria-label="View DevGuard 24">
-      <img src="/images/power-checker-hero.jpg" width="1600" height="900" alt="DevGuard 24 inline DC protection board" loading="eager">
-    </a>
-  </article>
-
-  <article class="quiet-product">
-    <div class="quiet-product-copy">
-      <div class="quiet-meta"><span>02 / Software</span><span>$15 preview</span></div>
-      <h3>DriverBench</h3>
-      <p>A small Python tool for organizing, comparing, and saving loudspeaker impedance sweep data from measurement hardware you already own.</p>
-      <a class="quiet-link" href="/driverbench-preview/">View DriverBench →</a>
-    </div>
-    <div class="quiet-readout" aria-hidden="true">
-      <span>IMPEDANCE / COMPARISON</span>
-      <strong>8.74 Ω</strong>
-      <span>1.00 kHz · −0.9°</span>
-      <i></i>
-    </div>
-  </article>
 </section>
 
-<section class="quiet-bench container" aria-labelledby="bench-title">
-  <div class="quiet-section-head">
-    <p class="quiet-label active">On the bench</p>
-    <h2 id="bench-title">Bass Manager <span>Rev A</span></h2>
-    <p>Variable analog high-pass / low-pass crossover. No DSP in the signal path.</p>
+<section class="bench-note">
+  <div class="container bench-note-card">
+    <div class="bench-note-copy">
+      <p class="eyebrow">On the bench // Rev A</p>
+      <h2>Bass Manager</h2>
+      <p>Variable analog high-pass / low-pass crossover. Schematic work is complete; PCB routing is next.</p>
+    </div>
+
+    <dl class="bench-progress" aria-label="Bass Manager Rev A status">
+      <div><dt>Schematic</dt><dd class="status-done">Complete</dd></div>
+      <div><dt>PCB</dt><dd class="status-active">Routing</dd></div>
+      <div><dt>Prototype</dt><dd>Pending</dd></div>
+      <div><dt>Test</dt><dd>Pending</dd></div>
+    </dl>
   </div>
-
-  <dl class="quiet-status">
-    <div><dt>Schematic</dt><dd class="done">Complete</dd></div>
-    <div><dt>PCB layout</dt><dd class="active">Routing</dd></div>
-    <div><dt>Prototype</dt><dd>Pending</dd></div>
-    <div><dt>Bench test</dt><dd>Pending</dd></div>
-  </dl>
-
-  <div class="quiet-spec-line">
-    <span>40–160 Hz adjustable HP / LP</span>
-    <span>Analog signal path</span>
-    <span>Rev A · Sep 2026</span>
-  </div>
-
-  <a class="quiet-link" href="/labnotes/">Follow the build in Lab Notes →</a>
 </section>
 
-<section class="quiet-notes container" aria-labelledby="notes-title">
-  <div class="quiet-section-head quiet-section-inline">
+<section class="lab-note-link">
+  <div class="container lab-note-link-inner">
     <div>
-      <p class="quiet-label">Lab notes</p>
-      <h2 id="notes-title">Work log, not content feed.</h2>
+      <p class="eyebrow">Lab Notes</p>
+      <h2>Builds, experiments, measurements, and fixes.</h2>
     </div>
-    <a class="quiet-link" href="/labnotes/">All notes →</a>
-  </div>
-
-  <div class="quiet-note-list">
-    <a href="/labnotes/" class="quiet-note-row">
-      <time datetime="2026-09-23">23 Sep 2026</time>
-      <span>Bass Manager Rev A</span>
-      <em>schematic complete / layout next</em>
-    </a>
-    <a href="/labnotes/" class="quiet-note-row">
-      <time datetime="2026-09-16">16 Sep 2026</time>
-      <span>Speaker impedance measurement PoC</span>
-      <em>118 valid sweep points</em>
-    </a>
-    <a href="/labnotes/" class="quiet-note-row">
-      <time datetime="2026-09-01">01 Sep 2026</time>
-      <span>Infraverter Rev A</span>
-      <em>assembled</em>
-    </a>
-  </div>
-</section>
-
-<section class="quiet-end container">
-  <p>Odderon Lab is my independent electronics shop in Louisiana. I do the design, layout, code, assembly, testing, and documentation here.</p>
-  <div>
-    <a class="quiet-link" href="/about/">About the lab →</a>
-    <a class="quiet-link" href="mailto:jacob@odderonlab.com">jacob@odderonlab.com</a>
+    <a href="/labnotes/" class="btn-secondary">Read the bench log</a>
   </div>
 </section>
