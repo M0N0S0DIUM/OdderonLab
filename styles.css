@@ -67,7 +67,7 @@ a {
 }
 
 a:hover {
-  color: #efbd74;
+  color: #72e8ef;
 }
 
 ::selection {
@@ -242,9 +242,20 @@ p {
 /* Buttons */
 .btn-primary,
 .btn-secondary {
-  color: var(--green);
-  background: transparent;
-  border-color: rgba(229, 68, 146, 0.62);
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid;
+  border-radius: 2px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
 }
 
 .btn-primary {
@@ -260,8 +271,9 @@ p {
 }
 
 .btn-secondary {
-  color: var(--text);
+  color: var(--green);
   background: transparent;
+  border-color: rgba(229, 68, 146, 0.62);
 }
 
 .btn-secondary:hover {
