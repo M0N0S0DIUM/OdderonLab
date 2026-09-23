@@ -1,7 +1,7 @@
 {
   "name": "odderon-lab",
   "version": "1.0.0",
-  "description": "Odderon Lab - Precision Diagnostic Tools",
+  "description": "Odderon Lab - small-run electronics hardware and bench tools",
   "scripts": {
     "build": "eleventy && cp styles.css _site/styles.css",
     "dev": "eleventy --serve",
