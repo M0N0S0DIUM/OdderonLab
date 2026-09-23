@@ -6,10 +6,10 @@
   {% set resolvedCanonical = canonical or (siteUrl ~ page.url) %}
   {% set socialImagePath = image or "/images/power-checker-hero.jpg" %}
   {% set socialImageUrl = siteUrl ~ socialImagePath %}
-  {% set socialImageAlt = imageAlt or "Odderon Lab independent hardware" %}
+  {% set socialImageAlt = imageAlt or "Odderon Lab independent electronics lab" %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080a11">
+  <meta name="theme-color" content="#090a12">
   <meta name="color-scheme" content="dark">
   <title>{{ fullTitle }}</title>
   {% if description %}<meta name="description" content="{{ description }}">{% endif %}
@@ -29,9 +29,7 @@
   {% if description %}<meta name="twitter:description" content="{{ description }}">{% endif %}
   <meta name="twitter:image" content="{{ socialImageUrl }}">
   <meta name="twitter:image:alt" content="{{ socialImageAlt }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20260914-refresh">
+  <link rel="stylesheet" href="/styles.css?v=20260923-matureretro">
   <link rel="icon" type="image/x-icon" href="/favicon.ico?v=waveform-2">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=waveform-2">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=waveform-2">
@@ -54,7 +52,12 @@
 
   <nav class="nav" aria-label="Primary navigation">
     <div class="container nav-container">
-      <div class="logo"><a href="/" class="brand-link"><img class="brand-mark" src="/images/odderon-logo.svg?v=2" width="40" height="40" alt=""><span>Odderon Lab</span></a></div>
+      <div class="logo">
+        <a href="/" class="brand-link">
+          <img class="brand-mark" src="/images/odderon-logo.svg?v=2" width="36" height="36" alt="">
+          <span>Odderon Lab</span>
+        </a>
+      </div>
       <div class="nav-links">
         <a href="/products/"{% if page.url == "/products/" or navSection == "products" %} aria-current="page"{% endif %}>Products</a>
         <a href="/labnotes/"{% if page.url == "/labnotes/" or navSection == "labnotes" %} aria-current="page"{% endif %}>Lab Notes</a>
@@ -70,9 +73,9 @@
 
   <footer>
     <div class="container footer-content">
-      <p>Odderon Lab // {% year %}</p>
+      <p>Odderon Lab · {% year %}</p>
       <div class="footer-meta">
-        <p class="footer-tagline">Hardware + software. Built at the bench.</p>
+        <p class="footer-tagline">Independent electronics lab in Louisiana.</p>
         <a class="footer-contact" href="mailto:jacob@odderonlab.com">jacob@odderonlab.com</a>
       </div>
     </div>

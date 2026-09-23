@@ -1,24 +1,71 @@
 ---
 layout: base.njk
 title: DriverBench Preview
-description: Compare loudspeaker impedance sweeps, save job records, and export useful reports. DriverBench Preview is $15 and requires Python 3.10+.
+description: Compare loudspeaker impedance sweeps, save job records, and export reports. DriverBench Preview is $15 and requires Python 3.10+.
 navSection: products
 ---
 <section class="container page-content driverbench-detail">
-  <header class="page-intro"><p class="eyebrow">Software preview · $15</p><h1>Make your speaker measurements easier to use.</h1><p>DriverBench turns existing impedance sweeps into saved driver records you can compare, archive, and hand off.</p>
-    <div class="product-actions"><a href="https://payhip.com/b/y9gAO" target="_blank" rel="noopener" class="btn-primary">Get DriverBench Preview · $15</a><a href="#requirements" class="btn-secondary">Check requirements</a></div>
+  <header class="page-intro">
+    <p class="eyebrow">Software preview · $15</p>
+    <h1>DriverBench</h1>
+    <p>A small Python tool for organizing and comparing impedance sweep data from a speaker-measurement setup you already own.</p>
+    <div class="product-actions">
+      <a href="https://payhip.com/b/y9gAO" target="_blank" rel="noopener" class="btn-primary">Get the preview · $15</a>
+      <a href="#requirements" class="btn-secondary">Requirements</a>
+    </div>
     <p class="purchase-note">Python 3.10+ · Uses your existing measurement data</p>
   </header>
-  <section class="product-section" aria-labelledby="workflow-heading"><div class="section-heading"><p class="eyebrow">The workflow</p><h2 id="workflow-heading">Import. Compare. Keep the result.</h2></div>
+
+  <section class="product-section" aria-labelledby="workflow-heading">
+    <div class="section-heading">
+      <p class="eyebrow">Workflow</p>
+      <h2 id="workflow-heading">Import, compare, save.</h2>
+    </div>
     <div class="protection-grid">
-      <article class="protection-card"><span class="protection-index">01</span><h3>Bring in a sweep</h3><p>Import CSV or ZMA-style impedance data and generate magnitude and phase reports.</p></article>
-      <article class="protection-card"><span class="protection-index">02</span><h3>Compare drivers</h3><p>Compare a pair of drivers or check a measurement against a known-good reference using tolerances you choose.</p></article>
-      <article class="protection-card"><span class="protection-index">03</span><h3>Save the context</h3><p>Attach job ID, asset, operator, and notes. Export reports and normalized CSV or JSON data.</p></article>
+      <article class="protection-card">
+        <span class="protection-index">01</span>
+        <h3>Import a sweep</h3>
+        <p>Load CSV or ZMA-style impedance data and generate magnitude and phase reports.</p>
+      </article>
+      <article class="protection-card">
+        <span class="protection-index">02</span>
+        <h3>Compare drivers</h3>
+        <p>Compare a pair of drivers or check a measurement against a known-good reference using tolerances you choose.</p>
+      </article>
+      <article class="protection-card">
+        <span class="protection-index">03</span>
+        <h3>Keep the context</h3>
+        <p>Attach job ID, asset, operator, and notes. Export reports plus normalized CSV or JSON data.</p>
+      </article>
     </div>
   </section>
+
   <section class="product-spec-section" id="requirements" aria-labelledby="requirements-title">
-    <div class="spec-panel"><p class="eyebrow">Before you buy</p><h2 id="requirements-title">What you need</h2><ul><li>Python 3.10 or newer.</li><li>An existing speaker-measurement setup that exports compatible CSV or ZMA-style data.</li><li>Comfort running a Python tool. The preview has no third-party Python package dependencies.</li></ul><p>This is an early software preview. If you’re unsure whether your files will work, <a href="mailto:jacob@odderonlab.com?subject=DriverBench%20file%20compatibility">ask me before buying</a>.</p></div>
-    <aside class="usage-panel"><p class="eyebrow">What it measures</p><h2>Bring your own measurements.</h2><p>DriverBench does not measure a speaker by itself. It analyzes data from your existing setup.</p><p>A PASS result means the compared curves stayed within your selected tolerances. It is not a complete assessment of a speaker’s sound or condition.</p></aside>
+    <div class="spec-panel">
+      <p class="eyebrow">Requirements</p>
+      <h2 id="requirements-title">What you need</h2>
+      <ul>
+        <li>Python 3.10 or newer.</li>
+        <li>An existing speaker-measurement setup that exports compatible CSV or ZMA-style data.</li>
+        <li>Comfort running a Python tool. The preview has no third-party Python package dependencies.</li>
+      </ul>
+      <p>If you are unsure whether your files will work, <a href="mailto:jacob@odderonlab.com?subject=DriverBench%20file%20compatibility">send me a sample before buying</a>.</p>
+    </div>
+
+    <aside class="usage-panel">
+      <p class="eyebrow">Important limit</p>
+      <h2>It does not measure a speaker.</h2>
+      <p>DriverBench analyzes data from your existing measurement setup.</p>
+      <p>A PASS result means the compared curves stayed within the tolerances you selected. It is not a complete assessment of a speaker’s sound or condition.</p>
+    </aside>
   </section>
-  <section class="product-cta"><div><h2>Keep the measurement with the job.</h2><p>For builders and repair benches that want less file hunting and easier comparison.</p></div><a href="https://payhip.com/b/y9gAO" target="_blank" rel="noopener" class="btn-primary">Get the preview · $15</a></section>
+
+  <section class="product-cta">
+    <div>
+      <p class="eyebrow">Preview</p>
+      <h2>Keep the measurement with the job.</h2>
+      <p>Built for repair benches and small shops that want less file hunting and easier comparison.</p>
+    </div>
+    <a href="https://payhip.com/b/y9gAO" target="_blank" rel="noopener" class="btn-primary">Get DriverBench · $15</a>
+  </section>
 </section>
