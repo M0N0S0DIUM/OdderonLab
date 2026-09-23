@@ -1,14 +1,14 @@
 ---
 layout: base.njk
 title: Lab Notes
-description: Engineering lab notes from Odderon Lab. Prototypes, debugging, hardware design decisions, and useful failures from the bench.
+description: Engineering notes from the Odderon Lab bench: prototypes, tests, hardware decisions, and useful failures.
 ---
 
 <section class="container page-content">
   <header class="page-intro">
-    <p class="eyebrow">Field Notes // Bench Log</p>
+    <p class="eyebrow">Bench log</p>
     <h1>Lab Notes</h1>
-    <p>Short notes from the bench: prototypes, debugging, design decisions, and the occasional useful failure.</p>
+    <p>Design notes, tests, failures, measurements, and things worth writing down.</p>
   </header>
 
   <div class="post-grid">
@@ -18,7 +18,7 @@ description: Engineering lab notes from Odderon Lab. Prototypes, debugging, hard
       <time class="note-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
       <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
       <p class="note-summary">{{ post.data.description }}</p>
-      <a class="note-link" href="{{ post.url }}" aria-label="Read {{ post.data.title }}">Read Note →</a>
+      <a class="note-link" href="{{ post.url }}" aria-label="Read {{ post.data.title }}">Read →</a>
     </article>
       {% endif %}
     {% endfor %}
